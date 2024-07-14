@@ -1,36 +1,21 @@
 <?php
 
-  trait home1 {
-      public function work(){
-          return 1 ;
-      }
-  }
+require 'vendor/autoload.php';
 
-  trait home2 {
-      public function work(){
-          return 2;
-      }
-  }
+use Overload\User;
+use Overload\CustomException;
 
-  trait home3 {
-      public function work(){
-          return 3;
-      }
-  }
+try {
+    $user = new User();
+    $user->setName('John Doe');
+    $user->setAge(30);
+    $user->setEmail('john@example.com');
 
-  class Test
-  {
-  use home1, home2 ,home3 {
-      home1::work insteadof home2 ,home3;
-      home2::work as workhome2 ;
-      home3::work as workhome3 ;
+    $data = $user->getAll();
+    print_r($data);
+} catch (CustomException $e) {
+    echo "Error: " . $e->getMessage();
+}
 
-  }
-
-    public function getSum(){
-      return $this->work() + $this->workhome2() + $this->workhome3();
-    }
-
-  }
-    ?>
+?>
 

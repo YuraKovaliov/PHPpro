@@ -1,0 +1,60 @@
+Index: index.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\n  trait home1 {\r\n      public function work(){\r\n          return 1 ;\r\n      }\r\n  }\r\n\r\n  trait home2 {\r\n      public function work(){\r\n          return 2;\r\n      }\r\n  }\r\n\r\n  trait home3 {\r\n      public function work(){\r\n          return 3;\r\n      }\r\n  }\r\n\r\n  class Test\r\n  {\r\n  use home1, home2 ,home3 {\r\n      home1::work insteadof home2 ,home3;\r\n      home2::work as workhome2 ;\r\n      home3::work as workhome3 ;\r\n\r\n  }\r\n\r\n    public function getSum(){\r\n      return $this->work() + $this->workhome2() + $this->workhome3();\r\n    }\r\n\r\n  }\r\n    ?>\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.php b/index.php
+--- a/index.php	
++++ b/index.php	
+@@ -1,5 +1,49 @@
+ <?php
+ 
++class RGPtest
++{
++    public $red ;
++    public  $green ;
++    public $blue ;
++
++    public function __construct($red,$green,$blue)
++    {
++        $this->setRed($red);
++        $this->setGreen($green);
++        $this->setBlue($blue);
++    }
++
++}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+   trait home1 {
+       public function work(){
+           return 1 ;
