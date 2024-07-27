@@ -1,8 +1,7 @@
 <?php
- require "autoload.php";
+require 'autoload.php';
 
 
- //A class for working with a product
 class Product {
     public function get($name) {
         /////////////
@@ -43,12 +42,10 @@ class ProductRenderer {
     }
 
     public function show() {
-            ///////////
+        ///////////
     }
     public function prints() {
         ///////////
     }
 }
-
-
 
